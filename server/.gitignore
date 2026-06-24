@@ -1,0 +1,8 @@
+# logs
+bun.lock
+
+# resources
+node_modules
+
+# env
+.env
