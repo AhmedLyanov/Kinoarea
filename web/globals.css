@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+:root{
+    --primary-bg: #1F2538;
+}
+
+body{
+    background-color: var(--primary-bg);
+    padding-inline: 245px;
+}
