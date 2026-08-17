@@ -1,11 +1,17 @@
 @import "tailwindcss";
 
+* {
+    box-sizing: border-box;
+}
+
 :root {
     --primary-bg: #1f2538;
     --primary-white: #ffffff;
-    --primary-blue: #3657CB;
+    --primary-blue: #3657cb;
+    
+    --rating-green: #89cb36; 
+    --genre-yellow: #F2F60F;
 }
-
 
 @font-face {
     font-family: "Qanelas";
@@ -87,8 +93,6 @@
     font-display: swap;
 }
 
-
-
 html {
     font-family: "Qanelas", sans-serif;
 }
@@ -97,5 +101,10 @@ body {
     margin: 0;
     background-color: var(--primary-bg);
     color: var(--primary-white);
-    padding-inline: 245px;
+}
+
+.container {
+    width: 100%;
+    max-width: 1430px;
+    margin-inline: auto;
 }

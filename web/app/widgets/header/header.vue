@@ -3,7 +3,7 @@ import { Logo, Navigation, Button } from "~/shared/ui";
 </script>
 
 <template>
-    <header class="flex justify-between mt-3">
+    <header class="container flex justify-between mt-3">
         <div>
             <Logo />
 
