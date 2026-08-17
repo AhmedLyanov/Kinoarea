@@ -1,10 +1,101 @@
 @import "tailwindcss";
 
-:root{
-    --primary-bg: #1F2538;
+:root {
+    --primary-bg: #1f2538;
+    --primary-white: #ffffff;
+    --primary-blue: #3657CB;
 }
 
-body{
+
+@font-face {
+    font-family: "Qanelas";
+    src: url("/fonts/Qanelas-Thin.otf") format("opentype");
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Qanelas";
+    src: url("/fonts/Qanelas-UltraLight.otf") format("opentype");
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Qanelas";
+    src: url("/fonts/Qanelas-Light.otf") format("opentype");
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Qanelas";
+    src: url("/fonts/Qanelas-Regular.otf") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Qanelas";
+    src: url("/fonts/Qanelas-Medium.otf") format("opentype");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Qanelas";
+    src: url("/fonts/Qanelas-SemiBold.otf") format("opentype");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Qanelas";
+    src: url("/fonts/Qanelas-Bold.otf") format("opentype");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Qanelas";
+    src: url("/fonts/Qanelas-ExtraBold.otf") format("opentype");
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Qanelas";
+    src: url("/fonts/Qanelas-Black.otf") format("opentype");
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Qanelas";
+    src: url("/fonts/Qanelas-Heavy.otf") format("opentype");
+    font-weight: 950;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+
+html {
+    font-family: "Qanelas", sans-serif;
+}
+
+body {
+    margin: 0;
     background-color: var(--primary-bg);
+    color: var(--primary-white);
     padding-inline: 245px;
 }

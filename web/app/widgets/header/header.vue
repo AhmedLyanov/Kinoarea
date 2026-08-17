@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Logo, Navigation } from "~/shared/ui";
+import { Logo, Navigation, Button } from "~/shared/ui";
 </script>
 
 <template>
@@ -16,5 +16,19 @@ import { Logo, Navigation } from "~/shared/ui";
         </div>
 
         <Navigation />
+        <div class="flex gap-3">
+            <Button
+                variant="search"
+                class="border-(--primary-white) bg-(--primary-white) text-(--primary-blue)"
+            >
+                <Icon name="lucide:search" class="size-8" />
+            </Button>
+            <Button
+                variant="login"
+                class="bg-(--primary-blue) text-(--primary-white) shadow-[0_0_30px_var(--primary-blue)]"
+            >
+                Войти
+            </Button>
+        </div>
     </header>
 </template>

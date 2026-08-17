@@ -1,13 +1,16 @@
 <template>
     <Header />
-    <main class="min-h-screen">
-        <h1 class="text-center">hkj</h1>
 
-        <p>{{ data }}</p>
+    <main class="min-h-screen">
+        <Typography variant="h1">
+            Сейчас в кино
+        </Typography>
     </main>
 </template>
 
 <script setup lang="ts">
-const { data } = useFetch("/api/hello");
 import { Header } from "~/widgets";
+import { Typography } from "~/shared/ui";
+
+const { data } = useFetch("/api/hello");
 </script>

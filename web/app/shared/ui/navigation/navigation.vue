@@ -2,27 +2,51 @@
 import { Typography } from "~/shared/ui";
 
 const navigationItems = [
-    "Афиша",
-    "Медиа",
-    "Фильмы",
-    "Актёры",
-    "Новости",
-    "Подборки",
-    "Категории",
+    {
+        label: "Афиша",
+        to: "/",
+    },
+    {
+        label: "Медиа",
+        to: "/media",
+    },
+    {
+        label: "Фильмы",
+        to: "/movies",
+    },
+    {
+        label: "Актёры",
+        to: "/actors",
+    },
+    {
+        label: "Новости",
+        to: "/news",
+    },
+    {
+        label: "Подборки",
+        to: "/collections",
+    },
+    {
+        label: "Категории",
+        to: "/categories",
+    },
 ];
 </script>
 
 <template>
     <nav class="flex items-center gap-10">
-        <a
+        <NuxtLink
             v-for="item in navigationItems"
-            :key="item"
-            href="#"
+            :key="item.label"
+            :to="item.to"
             class="transition-opacity hover:opacity-70"
         >
-            <Typography variant="body">
-                {{ item }}
+            <Typography
+                variant="body"
+                class="font-bold text-(--primary-white)"
+            >
+                {{ item.label }}
             </Typography>
-        </a>
+        </NuxtLink>
     </nav>
 </template>
