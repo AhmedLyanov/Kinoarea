@@ -54,7 +54,7 @@ defineProps<{
 
             <Typography
                 variant="small"
-                class="mt-1 text-[13px] leading-tight text-(--genre-yellow)"
+                class="mt-1 text-[13px] leading-tight text-(--primary-yellow)"
             >
                 {{ movie.genres }}
             </Typography>

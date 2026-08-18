@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { Header, NowInCinema } from "~/widgets";
+import { Header, NowInCinema, NewTrailers, PopularFilms, LastNews, Footer} from "~/widgets";
+
 </script>
 
 <template>
@@ -37,6 +38,10 @@ import { Header, NowInCinema } from "~/widgets";
         <div class="relative z-10">
             <Header />
             <NowInCinema />
+            <NewTrailers/>
+            <PopularFilms/>
+            <LastNews/>
+            <Footer/>
         </div>
     </div>
 </template>

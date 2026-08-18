@@ -10,17 +10,12 @@ const emit = defineEmits<{
 </script>
 
 <template>
-    <nav class="flex items-center gap-8">
-        <button
+    <div class="flex items-center gap-8">
+        <Typography
             v-for="category in categories"
             :key="category"
-            type="button"
-            class="
-                text-[16px]
-                font-bold
-                transition-opacity
-                hover:opacity-70
-            "
+            variant="body"
+            class="font-bold text-(--primary-white) cursor-pointer"
             :class="
                 activeCategory === category
                     ? 'text-(--primary-white)'
@@ -29,6 +24,6 @@ const emit = defineEmits<{
             @click="emit('update:activeCategory', category)"
         >
             {{ category }}
-        </button>
-    </nav>
+        </Typography>
+    </div>
 </template>

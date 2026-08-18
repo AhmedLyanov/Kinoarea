@@ -17,7 +17,8 @@ type ButtonVariant =
     | "login"
     | "primary"
     | "ghost"
-    | "outline";
+    | "outline"
+    | "filled";
 
 interface Props {
     tag?: "button" | "a";
@@ -49,6 +50,9 @@ const buttonClasses = computed(() => {
 
         outline:
             "inline-flex items-center justify-center rounded-[10px] border px-6 py-3 font-semibold transition-opacity hover:opacity-80 disabled:cursor-not-allowed disabled:opacity-50",
+
+        filled:
+            "inline-flex items-center justify-center rounded-[10px] bg-(--primary-blue) px-[38px] py-[20px] font-semibold  transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-50",
     };
 
     return variants[props.variant];

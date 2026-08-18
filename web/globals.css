@@ -8,9 +8,14 @@
     --primary-bg: #1f2538;
     --primary-white: #ffffff;
     --primary-blue: #3657cb;
+    --primary-darkblue: #1B2133; 
+    --primary-yellow: #F2F60F;
+    --primary-black: #151A26;
     
+    --footer-bg: #151A26;
+    --footer-bg-cover: #1D3AA0E5;  
     --rating-green: #89cb36; 
-    --genre-yellow: #F2F60F;
+    
 }
 
 @font-face {

@@ -51,7 +51,7 @@ const activeCategory = ref("Все");
                         text-(--primary-white)
                     "
                 >
-                    Все новости
+                    Все новинки
                 </Button>
             </div>
         </div>
