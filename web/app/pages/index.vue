@@ -1,6 +1,5 @@
 <script setup lang="ts">
-import { Header, NowInCinema, NewTrailers, PopularFilms, LastNews, Footer} from "~/widgets";
-
+import { Header, NowInCinema, NewTrailers, PopularFilms, LastNews, Footer } from "~/widgets";
 </script>
 
 <template>
@@ -13,35 +12,21 @@ import { Header, NowInCinema, NewTrailers, PopularFilms, LastNews, Footer} from 
             />
 
             <div
-                class="
-                    absolute
-                    inset-0
-                    bg-gradient-to-b
-                    from-transparent
-                    via-transparent
-                    to-(--primary-bg)
-                "
+                class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-(--primary-bg)"
             />
 
             <div
-                class="
-                    absolute
-                    inset-0
-                    bg-gradient-to-r
-                    from-(--primary-bg)/40
-                    via-transparent
-                    to-(--primary-bg)/40
-                "
+                class="absolute inset-0 bg-gradient-to-r from-(--primary-bg)/40 via-transparent to-(--primary-bg)/40"
             />
         </div>
 
         <div class="relative z-10">
             <Header />
             <NowInCinema />
-            <NewTrailers/>
-            <PopularFilms/>
-            <LastNews/>
-            <Footer/>
+            <NewTrailers />
+            <PopularFilms />
+            <LastNews />
+            <Footer />
         </div>
     </div>
 </template>

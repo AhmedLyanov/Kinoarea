@@ -12,7 +12,7 @@ const navigationItems = [
     },
     {
         label: "Фильмы",
-        to: "/movies",
+        to: "/watch",
     },
     {
         label: "Актёры",

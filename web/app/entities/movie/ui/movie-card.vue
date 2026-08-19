@@ -10,7 +10,7 @@ defineProps<{
 <template>
     <article class="group">
         <NuxtLink
-            :to="`/movies/${movie.id}`"
+            :to="`/watch/${movie.id}`"
             class="block"
         >
             <div class="relative overflow-hidden rounded-[6px]">

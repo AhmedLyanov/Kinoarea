@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Button, Logo, Typography } from "~/shared/ui";
+import { Button, Logo, Typography, Input } from "~/shared/ui";
 </script>
 
 <template>
@@ -24,11 +24,10 @@ import { Button, Logo, Typography } from "~/shared/ui";
                             новинок кино - заполните форму ниже и оформите
                             бесплатную E-mail рассылку!
                         </Typography>
-                        <div class="flex gap-2">
-                            <input
-                                type="email"
-                                placeholder="Введите ваш email"
-                                class="w-full p-2 border rounded"
+                        <div class="w-full flex gap-2">
+                            <Input
+                                placeholder="Введите свой E-mail адрес"
+                                variant="default"
                             />
                             <Button
                                 variant="filled"
