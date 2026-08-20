@@ -1,8 +1,10 @@
 <template>
-    <NuxtPage />
+    <NuxtLayout>
+        <NuxtPage />
+    </NuxtLayout>
 </template>
 <script setup lang="ts">
 useHead({
-  title: "VayKino",
+    title: "VayKino",
 });
 </script>

@@ -1,6 +1,8 @@
 <script setup lang="ts">
-import { Header, MovieCover, Footer } from "@/widgets";
-
+import { MovieCover, MovieMetadata } from "@/widgets";
+definePageMeta({
+    layout: "movie",
+});
 const route = useRoute();
 const movie = ref({
     title: "Побег из Претории",
@@ -13,9 +15,8 @@ const movieId = route.params.id;
 </script>
 
 <template>
-    <Header/>
-    <div>
+    <div class="px-[143px]">
         <MovieCover />
+        <MovieMetadata class="mt-[45px]"/>
     </div>
-    <Footer/>
 </template>

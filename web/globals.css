@@ -8,15 +8,16 @@
     --primary-bg: #1f2538;
     --primary-white: #ffffff;
     --primary-blue: #3657cb;
-    --primary-darkblue: #1B2133; 
-    --primary-yellow: #F2F60F;
-    --primary-black: #151A26;
+    --primary-darkblue: #1b2133;
+    --primary-yellow: #f2f60f;
+    --primary-black: #151a26;
 
-    --input-placeholder: #151A2699;
-    --footer-bg: #151A26;
-    --footer-bg-cover: #1D3AA0E5;  
-    --rating-green: #89cb36; 
-    
+    --input-placeholder: #151a2699;
+    --footer-bg: #151a26;
+    --footer-bg-cover: #1d3aa0e5;
+    --rating-green: #89cb36;
+    --breadcrumbs-nonactive: #4f5b7c;
+
 }
 
 @font-face {
