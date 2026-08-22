@@ -1,12 +1,19 @@
 <script setup lang="ts">
 import { Button, Typography } from "~/shared/ui";
 import { MovieCard } from "~/entities/movie";
-
 import MovieCategories from "./movie-categories.vue";
-
-import { movies, movieCategories } from "../model/data";
+import type { Movie } from "~/entities/movie";
 
 const activeCategory = ref("Все");
+
+const { data, pending, error } = await useFetch<{
+    total: number;
+    prev_page: string | null;
+    next_page: string | null;
+    results: Movie[];
+}>("/api/movies");
+
+const movies = computed(() => (data.value?.results ?? []).slice(0, 8));
 </script>
 
 <template>
@@ -17,40 +24,36 @@ const activeCategory = ref("Все");
                     Сейчас в кино
                 </Typography>
 
-                <div
-                    class="
+                <div class="
                         h-[2px]
                         w-10
                         shrink-0
                         bg-(--primary-white)
-                    "
-                />
+                    " />
 
-                <MovieCategories
-                    :categories="movieCategories"
-                    :active-category="activeCategory"
-                    @update:active-category="activeCategory = $event"
-                />
+                <MovieCategories :categories="movieCategories" :active-category="activeCategory"
+                    @update:active-category="activeCategory = $event" />
+            </div>
+ 
+            <div v-if="pending" class="text-(--primary-white)">
+                Загрузка...
             </div>
 
-            <div class="grid grid-cols-4 gap-x-[18px] gap-y-8">
-                <MovieCard
-                    v-for="movie in movies"
-                    :key="movie.id"
-                    :movie="movie"
-                />
+            <div v-else-if="error" class="text-(--primary-white)">
+                Не удалось загрузить фильмы.
+            </div>
+
+            <div v-else class="grid grid-cols-4 gap-x-[18px] gap-y-8">
+                <MovieCard v-for="movie in movies" :key="movie.id" :movie="movie" />
             </div>
 
             <div class="mt-12.75 flex justify-center">
-                <Button
-                    variant="outline"
-                    class="
+                <Button variant="outline" class="
                         h-[58px]
                         w-[160px]
                         border-(--primary-white)
                         text-(--primary-white)
-                    "
-                >
+                    ">
                     Все новинки
                 </Button>
             </div>

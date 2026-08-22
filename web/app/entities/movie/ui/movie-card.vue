@@ -27,6 +27,7 @@ defineProps<{
                 />
 
                 <span
+                    v-if="movie.rating.imdb || movie.rating.kinopoisk"
                     class="
                         absolute
                         right-2
@@ -40,7 +41,7 @@ defineProps<{
                         text-white
                     "
                 >
-                    {{ movie.rating }}
+                    {{ movie.rating.imdb ?? movie.rating.kinopoisk }}
                 </span>
             </div>
 
@@ -56,7 +57,7 @@ defineProps<{
                 variant="small"
                 class="mt-1 text-[13px] leading-tight text-(--primary-yellow)"
             >
-                {{ movie.genres }}
+                {{ Object.values(movie.genres).join(", ") }}
             </Typography>
         </NuxtLink>
     </article>
