@@ -5,36 +5,34 @@
             :key="item.label"
             class="grid grid-cols-[180px_1fr] items-center"
         >
-            <span class="text-[20px] font-medium text-white">
+            <Typography variant="body" tag="span" class="whitespace-nowrap font-medium text-white">
                 {{ item.label }}:
-            </span>
+            </Typography>
 
-            <span
-                class="text-[20px] leading-[1.4] text-(--primary-yellow)"
-            >
+            <Typography variant="body" tag="span" class="whitespace-nowrap underline text-(--primary-yellow)">
                 {{ item.value }}
-            </span>
+            </Typography>
         </div>
 
         <div
             v-for="item in rightMetadata"
             :key="item.label"
-            class="grid grid-cols-[250px_1fr] items-center"
+            class="grid grid-cols-[180px_1fr] items-center"
         >
-            <span class="text-[20px] font-medium text-white">
+            <Typography variant="body" tag="span" class="whitespace-nowrap font-medium text-white">
                 {{ item.label }}:
-            </span>
+            </Typography>
 
-            <span
-                class="text-[20px] leading-[1.4] text-(--primary-yellow)"
-            >
+            <Typography variant="body" tag="span" class="whitespace-nowrap underline text-(--primary-yellow)">
                 {{ item.value }}
-            </span>
+            </Typography>
         </div>
     </section>
 </template>
 
 <script setup lang="ts">
+import {Typography} from "@/shared/ui";
+
 const leftMetadata = [
     {
         label: "Год",
