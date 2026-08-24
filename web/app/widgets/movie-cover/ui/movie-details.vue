@@ -1,58 +1,43 @@
 <script setup lang="ts">
 import { Breadcrumbs, Typography, Button, MovieRating } from "~/shared/ui";
+import type { Movie } from "~/entities/movie";
+
+defineProps<{
+    movie: Movie;
+}>();
 </script>
 
 <template>
-    <Breadcrumbs title="Побег из Претории" />
+    <Breadcrumbs :title="movie.title" />
 
     <div class="mt-6">
         <Typography variant="h1">
-            Побег из Претории
+            {{ movie.title }}
         </Typography>
 
-        <Typography
-            variant="body"
-            class="mt-1 text-[25px]"
-        >
-            Escape from Pretoria
+        <Typography variant="body" class="mt-1 text-[25px]">
+            {{ movie.originalTitle }}
         </Typography>
 
         <div class="mt-4 flex items-center gap-[13px]">
             <MovieRating
-                :value="8.7"
+                v-if="movie.rating.kinopoisk !== null"
+                :value="movie.rating.kinopoisk"
                 label="Kinoarea"
             />
 
             <MovieRating
-                :value="4.7"
+                v-if="movie.rating.imdb !== null"
+                :value="movie.rating.imdb"
                 label="IMDb"
             />
         </div>
 
-        <Typography
-            variant="body"
-            class="mt-4 max-w-[850px] text-[20px] leading-[1.4]"
-        >
-            Двое борцов за свободу отбывают срок в одной из самых строгих
-            тюрем мира — в «Претории». Вместе с другими узниками они планируют
-            дерзкий и опасный побег. Но придумать план — это только первый шаг.
-            Шаг второй — реализация плана.
-        </Typography>
-
         <div class="mt-7.5 flex items-center gap-9.25">
-            <Button
-                variant="outline"
-                class="h-[71px]"
-            >
-                <Icon
-                    name="lucide:play"
-                    class="size-9"
-                />
+            <Button variant="outline" class="h-[71px]">
+                <Icon name="lucide:play" class="size-9" />
 
-                <Typography
-                    variant="body"
-                    class="pl-3 text-[18px]"
-                >
+                <Typography variant="body" class="pl-3 text-[18px]">
                     Смотреть трейлер
                 </Typography>
             </Button>
@@ -65,5 +50,19 @@ import { Breadcrumbs, Typography, Button, MovieRating } from "~/shared/ui";
                 <Icon name="lucide:more-horizontal" class="size-5 text-white" />
             </div>
         </div>
+        <iframe
+            :src="movie.iframeUrl"
+            title="Видео плеер"
+            frameborder="0"
+            allow="
+                accelerometer;
+                autoplay;
+                clipboard-write;
+                encrypted-media;
+                gyroscope;
+                picture-in-picture;
+            "
+            allowfullscreen
+        ></iframe>
     </div>
 </template>

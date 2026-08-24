@@ -8,10 +8,10 @@ export interface Movie {
     rating: {
         imdb: string | null;
         kinopoisk: string | null;
-    };
+    }
     genres: string[];
     countries: string[];
     image: string;
     trailer: string | null;
-    watchUrl: string;
+    iframeUrl: string;
 }
