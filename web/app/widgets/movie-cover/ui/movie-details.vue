@@ -1,5 +1,11 @@
 <script setup lang="ts">
-import { Breadcrumbs, Typography, Button, MovieRating } from "~/shared/ui";
+import {
+    Breadcrumbs,
+    Typography,
+    Button,
+    MovieRating,
+} from "~/shared/ui";
+
 import type { Movie } from "~/entities/movie";
 
 defineProps<{
@@ -15,7 +21,11 @@ defineProps<{
             {{ movie.title }}
         </Typography>
 
-        <Typography variant="body" class="mt-1 text-[25px]">
+        <Typography
+            v-if="movie.originalTitle"
+            variant="body"
+            class="mt-1 text-[25px]"
+        >
             {{ movie.originalTitle }}
         </Typography>
 
@@ -34,10 +44,17 @@ defineProps<{
         </div>
 
         <div class="mt-7.5 flex items-center gap-9.25">
-            <Button variant="outline" class="h-[71px]">
+            <Button
+                v-if="movie.trailerUrl"
+                variant="outline"
+                class="h-[71px]"
+            >
                 <Icon name="lucide:play" class="size-9" />
 
-                <Typography variant="body" class="pl-3 text-[18px]">
+                <Typography
+                    variant="body"
+                    class="pl-3 text-[18px]"
+                >
                     Смотреть трейлер
                 </Typography>
             </Button>
@@ -50,19 +67,5 @@ defineProps<{
                 <Icon name="lucide:more-horizontal" class="size-5 text-white" />
             </div>
         </div>
-        <iframe
-            :src="movie.iframeUrl"
-            title="Видео плеер"
-            frameborder="0"
-            allow="
-                accelerometer;
-                autoplay;
-                clipboard-write;
-                encrypted-media;
-                gyroscope;
-                picture-in-picture;
-            "
-            allowfullscreen
-        ></iframe>
     </div>
 </template>

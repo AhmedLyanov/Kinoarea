@@ -10,8 +10,8 @@ defineProps<{
 <template>
     <article class="group">
         <NuxtLink
-            :to="`/watch/${movie.id}`"
-            class="block"
+            v-if="movie.ids?.kinopoisk"
+            :to="`/watch/${movie.ids.kinopoisk}`"
         >
             <div class="relative overflow-hidden rounded-[6px]">
                 <img
@@ -27,7 +27,7 @@ defineProps<{
                 />
 
                 <span
-                    v-if="movie.rating.imdb || movie.rating.kinopoisk"
+                    v-if="movie.rating?.imdb || movie.rating?.kinopoisk"
                     class="
                         absolute
                         right-2
@@ -57,7 +57,7 @@ defineProps<{
                 variant="small"
                 class="mt-1 text-[13px] leading-tight text-(--primary-yellow)"
             >
-                {{ Object.values(movie.genres).join(", ") }}
+                {{ movie.genres.join(", ") }}
             </Typography>
         </NuxtLink>
     </article>

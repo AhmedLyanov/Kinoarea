@@ -21,14 +21,43 @@ export interface Movie {
         imdb: string | null;
         kinopoisk: string | null;
         worldArt: string | null;
+        tmdb: number | null;
     };
 
     poster: string;
 
-    iframeUrl: string;
+    iframeUrl: string | null;
     trailerUrl: string | null;
 
+    description: string | null;
+    tagline: string | null;
+
+    country: string[];
     genres: string[];
-    countries: string[];
-    collections: string[];
+
+    actors: string[];
+    directors: string[];
+    producers: string[];
+
+    duration: string | null;
+
+    translations: MovieTranslation[];
+
+    uhd: boolean;
+    lgbt: boolean;
+}
+
+export interface MovieTranslation {
+    id: string;
+
+    name: string;
+    iframe: string;
+
+    quality: string | null;
+
+    advertisement: boolean;
+    date: string | null;
+
+    uhd: boolean;
+    lgbt: boolean;
 }

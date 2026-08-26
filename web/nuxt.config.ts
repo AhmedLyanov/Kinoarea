@@ -10,6 +10,9 @@ export default defineNuxtConfig({
   runtimeConfig: {
     bhceshApiUrl: process.env.BHCESH_API_URL,
     bhceshToken: process.env.BHCESH_TOKEN,
+
+    allohaApiUrl: process.env.ALLOHA_API_URL,
+    allohaApiToken: process.env.ALLOHA_API_TOKEN,
   },
 
   compatibilityDate: "2025-07-15",
