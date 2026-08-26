@@ -15,7 +15,7 @@ defineProps<{
         >
             <div class="relative overflow-hidden rounded-[6px]">
                 <img
-                    :src="movie.image"
+                    :src="movie.poster"
                     :alt="movie.title"
                     class="
                         aspect-[271/370]

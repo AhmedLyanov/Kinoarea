@@ -1,34 +1,18 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { computed, ref } from "vue";
 
-import { Button, Typography } from "~/shared/ui";
+import { getNewMovies } from "~/entities/movie/api/get-movies";
 import MovieCard from "~/entities/movie/ui/movie-card.vue";
+import { Button, Typography } from "~/shared/ui";
 
 import MovieCategories from "./movie-categories.vue";
 import { movieCategories } from "../model/data";
 
 const activeCategory = ref("Все");
 
-const movies = [
-    {
-        id: 1,
-        title: "Мортал Комбат 2",
-        image: "https://example.com/mortal-kombat-2.jpg",
-        rating: {
-            imdb: 6.2,
-        },
-        genres: ["Фэнтези", "Боевик"],
-    },
-    {
-        id: 2,
-        title: "Мятеж",
-        image: "https://example.com/mutiny.jpg",
-        rating: {
-            imdb: 5.7,
-        },
-        genres: ["Боевик", "Криминал"],
-    },
-];
+const movies = await getNewMovies();
+
+const visibleMovies = computed(() => movies.slice(0, 8));
 </script>
 
 <template>
@@ -52,7 +36,7 @@ const movies = [
 
             <div class="grid grid-cols-4 gap-x-[18px] gap-y-8">
                 <MovieCard
-                    v-for="movie in movies"
+                    v-for="movie in visibleMovies"
                     :key="movie.id"
                     :movie="movie"
                 />
