@@ -1,14 +1,23 @@
 <script setup lang="ts">
-import { getMovie } from "~/entities/movie/api/get-movie";
-import MovieCover from "~/widgets/movie-cover/movie-cover.vue";
+import type { Movie } from "~/entities/movie";
 
-const route = useRoute();
+import Poster from "./ui/poster.vue";
+import MovieDetails from "./ui/movie-details.vue";
 
-const movie = await getMovie(String(route.params.id));
+defineProps<{
+    movie: Movie;
+}>();
 </script>
 
 <template>
-    <main class="mx-auto max-w-[1430px] py-20">
-        <MovieCover :movie="movie" />
-    </main>
+    <section class="flex gap-11.5 px-[143px]">
+        <Poster
+            :src="movie.poster"
+            :alt="movie.title"
+        />
+
+        <div class="pt-7.75">
+            <MovieDetails :movie="movie" />
+        </div>
+    </section>
 </template>

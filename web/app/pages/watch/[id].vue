@@ -1,15 +1,14 @@
 <script setup lang="ts">
 import { getMovie } from "~/entities/movie/api/get-movie";
+import MovieCover from "~/widgets/movie-cover/movie-cover.vue";
 
 const route = useRoute();
 
-const movieId = String(route.params.id);
-
-const movie = await getMovie(movieId);
-
-console.log("MOVIE:", movie);
+const movie = await getMovie(String(route.params.id));
 </script>
 
 <template>
-    <pre>{{ movie }}</pre>
+    <main class="mx-auto max-w-[1430px] py-20">
+        <MovieCover :movie="movie" />
+    </main>
 </template>

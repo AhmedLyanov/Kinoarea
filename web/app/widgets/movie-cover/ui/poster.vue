@@ -1,20 +1,16 @@
+<script setup lang="ts">
+defineProps<{
+    src: string;
+    alt: string;
+}>();
+</script>
+
 <template>
-    <div class="w-[404px] h-[559px] overflow-hidden rounded-[10px]">
+    <div class="shrink-0">
         <img
             :src="src"
             :alt="alt"
-            class="w-full h-full object-cover"
+            class="h-[600px] w-[400px] rounded-[10px] object-cover"
         />
     </div>
 </template>
-
-<script setup lang="ts">
-interface Props {
-    src: string;
-    alt?: string;
-}
-
-withDefaults(defineProps<Props>(), {
-    alt: "Постер фильма",
-});
-</script>
