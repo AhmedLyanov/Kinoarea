@@ -1,234 +1,77 @@
-import type { Trailer } from "~/entities/trailer";
-
-export const trailers: Trailer[] = [
-    {
-        id: "fast-9",
-        movieId: "fast-9",
-        title: "Форсаж 9",
-        thumbnail: "https://images.unsplash.com/photo-1583121274602-3e2820c69888?w=500&h=280&fit=crop",
-        videoUrl: "/videos/trailers/fast-9.mp4",
-        author: {
-            name: "Moviearea",
-            avatar: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=50&h=50&fit=crop&crop=center",
-        },
-        stats: {
-            views: 3265,
-            likes: 420,
-            dislikes: 42,
-        },
-    },
-    {
-        id: "mulan",
-        movieId: "mulan",
-        title: "Мулан",
-        thumbnail: "https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=500&h=280&fit=crop",
-        videoUrl: "/videos/trailers/mulan.mp4",
-        author: {
-            name: "Moviearea",
-            avatar: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=50&h=50&fit=crop&crop=center",
-        },
-        stats: {
-            views: 2150,
-            likes: 380,
-            dislikes: 25,
-        },
-    },
-    {
-        id: "fast-9-second",
-        movieId: "fast-9",
-        title: "Форсаж 9 (второй трейлер)",
-        thumbnail: "https://images.unsplash.com/photo-1519904981063-b0cf448d479e?w=500&h=280&fit=crop",
-        videoUrl: "/videos/trailers/fast-9-2.mp4",
-        author: {
-            name: "Moviearea",
-            avatar: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=50&h=50&fit=crop&crop=center",
-        },
-        stats: {
-            views: 1840,
-            likes: 210,
-            dislikes: 15,
-        },
-    },
-    {
-        id: "black-widow",
-        movieId: "black-widow",
-        title: "Чёрная вдова",
-        thumbnail: "https://images.unsplash.com/photo-1534447677768-be436bb09401?w=500&h=280&fit=crop",
-        videoUrl: "/videos/trailers/black-widow.mp4",
-        author: {
-            name: "Moviearea",
-            avatar: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=50&h=50&fit=crop&crop=center",
-        },
-        stats: {
-            views: 2950,
-            likes: 450,
-            dislikes: 30,
-        },
-    },
-    {
-        id: "quiet-place-2",
-        movieId: "quiet-place-2",
-        title: "Тихое место 2",
-        thumbnail: "https://images.unsplash.com/photo-1509347528160-9a9e33742cdb?w=500&h=280&fit=crop",
-        videoUrl: "/videos/trailers/quiet-place-2.mp4",
-        author: {
-            name: "Moviearea",
-            avatar: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=50&h=50&fit=crop&crop=center",
-        },
-        stats: {
-            views: 2100,
-            likes: 340,
-            dislikes: 28,
-        },
-    },
-];
-
 import type { Movie } from "~/entities/movie";
 
 export const movies: Movie[] = [
     {
         id: 1,
         title: "Побег из Претории",
-        genres: "Триллер",
-        rating: "6.70",
-        year: 2020,
         image: "https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=300&h=450&fit=crop",
+        rating: {
+            imdb: 6.7,
+        },
+        genres: ["Триллер"],
     },
     {
         id: 2,
         title: "Джокер",
-        genres: "Триллер, драма, криминал",
-        rating: "8.50",
-        year: 2019,
         image: "https://images.unsplash.com/photo-1534447677768-be436bb09401?w=300&h=450&fit=crop",
+        rating: {
+            imdb: 8.5,
+        },
+        genres: ["Триллер", "Драма", "Криминал"],
     },
     {
         id: 3,
         title: "Звёздные войны: Скайуокер. Восход",
-        genres: "Фантастика, фэнтези, боевик, приключения",
-        rating: "6.70",
-        year: 2019,
         image: "https://images.unsplash.com/photo-1536697246787-1f7ae568d89a?w=300&h=450&fit=crop",
+        rating: {
+            imdb: 6.7,
+        },
+        genres: ["Фантастика", "Фэнтези", "Боевик", "Приключения"],
     },
     {
         id: 4,
         title: "Джентльмены",
-        genres: "Боевик, комедия, криминал",
-        rating: "8.00",
-        year: 2019,
         image: "https://images.unsplash.com/photo-1509347528160-9a9e33742cdb?w=300&h=450&fit=crop",
+        rating: {
+            imdb: 8.0,
+        },
+        genres: ["Боевик", "Комедия", "Криминал"],
     },
     {
         id: 5,
         title: "Ford против Ferrari",
-        genres: "Биография, спорт, драма, боевик",
-        rating: "8.10",
-        year: 2019,
         image: "https://images.unsplash.com/photo-1519904981063-b0cf448d479e?w=300&h=450&fit=crop",
+        rating: {
+            imdb: 8.1,
+        },
+        genres: ["Биография", "Спорт", "Драма", "Боевик"],
     },
     {
         id: 6,
         title: "3022",
-        genres: "Фантастика, триллер",
-        rating: "4.90",
-        year: 2019,
         image: "https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=300&h=450&fit=crop",
+        rating: {
+            imdb: 4.9,
+        },
+        genres: ["Фантастика", "Триллер"],
     },
     {
         id: 7,
         title: "Хищные птицы: Потрясающая история Харли Квинн",
-        genres: "Боевик, криминал, комедия",
-        rating: "6.20",
-        year: 2020,
         image: "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=300&h=450&fit=crop",
+        rating: {
+            imdb: 6.2,
+        },
+        genres: ["Боевик", "Криминал", "Комедия"],
     },
     {
         id: 8,
         title: "Плохие парни навсегда",
-        genres: "Боевик, комедия, криминал",
-        rating: "6.90",
-        year: 2020,
         image: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=300&h=450&fit=crop",
-    },
-    {
-        id: 9,
-        title: "Дюна",
-        genres: "Фантастика, боевик, приключения",
-        rating: "8.20",
-        year: 2021,
-        image: "https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=300&h=450&fit=crop",
-    },
-    {
-        id: 10,
-        title: "Не время умирать",
-        genres: "Боевик, триллер, приключения",
-        rating: "7.50",
-        year: 2021,
-        image: "https://images.unsplash.com/photo-1534447677768-be436bb09401?w=300&h=450&fit=crop",
-    },
-    {
-        id: 11,
-        title: "Матрица: Воскрешение",
-        genres: "Фантастика, боевик",
-        rating: "5.80",
-        year: 2021,
-        image: "https://images.unsplash.com/photo-1536697246787-1f7ae568d89a?w=300&h=450&fit=crop",
-    },
-    {
-        id: 12,
-        title: "Человек-паук: Нет пути домой",
-        genres: "Фантастика, боевик, приключения",
-        rating: "8.60",
-        year: 2021,
-        image: "https://images.unsplash.com/photo-1509347528160-9a9e33742cdb?w=300&h=450&fit=crop",
-    },
-    {
-        id: 13,
-        title: "Бэтмен",
-        genres: "Боевик, драма, криминал",
-        rating: "8.40",
-        year: 2022,
-        image: "https://images.unsplash.com/photo-1519904981063-b0cf448d479e?w=300&h=450&fit=crop",
-    },
-    {
-        id: 14,
-        title: "Топ Ган: Мэверик",
-        genres: "Боевик, драма",
-        rating: "8.30",
-        year: 2022,
-        image: "https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=300&h=450&fit=crop",
-    },
-    {
-        id: 15,
-        title: "Аватар: Путь воды",
-        genres: "Фантастика, боевик, приключения",
-        rating: "7.90",
-        year: 2022,
-        image: "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=300&h=450&fit=crop",
-    },
-    {
-        id: 16,
-        title: "Оппенгеймер",
-        genres: "Драма, биография, история",
-        rating: "8.50",
-        year: 2023,
-        image: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=300&h=450&fit=crop",
-    },
-    {
-        id: 17,
-        title: "Барби",
-        genres: "Комедия, приключения",
-        rating: "7.80",
-        year: 2023,
-        image: "https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=300&h=450&fit=crop",
-    },
-    {
-        id: 18,
-        title: "Дюна: Часть вторая",
-        genres: "Фантастика, боевик, приключения",
-        rating: "8.70",
-        year: 2024,
-        image: "https://images.unsplash.com/photo-1534447677768-be436bb09401?w=300&h=450&fit=crop",
+        rating: {
+            imdb: 6.9,
+        },
+        genres: ["Боевик", "Комедия", "Криминал"],
     },
 ];
 
@@ -240,14 +83,4 @@ export const movieCategories = [
     "Фантастика",
     "Триллеры",
     "Драма",
-];
-
-export const popularityYears = [
-    "All Time",
-    "2026",
-    "2025",
-    "2024",
-    "2023",
-    "2022",
-    "2021",
 ];
