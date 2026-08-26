@@ -40,33 +40,37 @@ defineProps<{
                     duration-300
                     group-hover:opacity-100
                 "
-            />
-
-            <button
-                type="button"
-                class="
-                    absolute
-                    inset-1/2
-                    flex
-                    size-8
-                    -translate-x-1/2
-                    -translate-y-1/2
-                    items-center
-                    justify-center
-                    rounded-full
-                    bg-white/90
-                    text-black
-                    opacity-0
-                    transition-opacity
-                    duration-300
-                    group-hover:opacity-100
-                "
             >
-                <Icon name="lucide:play" class="size-4 fill-current" />
-            </button>
+                <button
+                    type="button"
+                    class="
+                        absolute
+                        left-1/2
+                        top-1/2
+                        flex
+                        size-8
+                        -translate-x-1/2
+                        -translate-y-1/2
+                        items-center
+                        justify-center
+                        rounded-full
+                        bg-white/90
+                        text-black
+                        opacity-0
+                        transition-opacity
+                        duration-300
+                        group-hover:opacity-100
+                    "
+                >
+                    ▶
+                </button>
+            </div>
         </div>
 
-        <Typography variant="body" class="mt-2.75 text-[20px] font-bold">
+        <Typography
+            variant="body"
+            class="mt-2.75 text-[20px] font-bold"
+        >
             {{ trailer.title }}
         </Typography>
     </article>
