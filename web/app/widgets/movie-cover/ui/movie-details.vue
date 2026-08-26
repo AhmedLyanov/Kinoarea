@@ -31,7 +31,7 @@ defineProps<{
             <MovieRating v-if="movie.rating.imdb !== null" :value="movie.rating.imdb" label="IMDb" />
         </div>
         <div class="mt-7.5 max-w-[650px] text-white">
-            <Typography variant="body" class="text-[20px] leading-[167%] break-words">
+            <Typography variant="body" class="text-[20px] leading-[167%] line-clamp-3">
                 {{ movie.description }}
             </Typography>
         </div>

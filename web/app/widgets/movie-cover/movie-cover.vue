@@ -10,7 +10,7 @@ defineProps<{
 </script>
 
 <template>
-    <section class="flex gap-11.5 px-[143px]">
+    <section class="flex justify-center gap-11.5 px-[143px]">
         <Poster
             :src="movie.poster"
             :alt="movie.title"
