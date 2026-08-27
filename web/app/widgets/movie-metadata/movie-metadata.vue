@@ -1,6 +1,5 @@
 <template>
     <section class="grid grid-cols-2 gap-x-[90px] gap-y-5 pt-[45px]">
-        <!-- Левая колонка -->
         <div
             v-for="item in leftMetadata"
             :key="item.label"
@@ -23,7 +22,6 @@
             </Typography>
         </div>
 
-        <!-- Правая колонка -->
         <div
             v-for="item in rightMetadata"
             :key="item.label"

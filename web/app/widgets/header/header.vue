@@ -1,9 +1,12 @@
 <script setup lang="ts">
 import { Logo, Navigation, Button } from "~/shared/ui";
+import { useSearchStore } from "~/stores/search";
+
+const searchStore = useSearchStore();
 </script>
 
 <template>
-    <header class="container flex justify-between mt-3">
+    <header class="container mt-3 flex justify-between">
         <div>
             <Logo />
 
@@ -16,13 +19,16 @@ import { Logo, Navigation, Button } from "~/shared/ui";
         </div>
 
         <Navigation />
+
         <div class="flex gap-3">
             <Button
                 variant="search"
                 class="border-(--primary-white) bg-(--primary-white) text-(--primary-blue)"
+                @click="searchStore.open()"
             >
                 <Icon name="lucide:search" class="size-8" />
             </Button>
+
             <Button
                 variant="login"
                 class="bg-(--primary-blue) text-(--primary-white) shadow-[0_0_30px_var(--primary-blue)]"
