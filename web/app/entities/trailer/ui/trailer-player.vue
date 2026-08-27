@@ -9,19 +9,17 @@ defineProps<{
 
 <template>
     <article>
-        <div class="relative aspect-video overflow-hidden rounded-[4px]">
-            <img
-                :src="trailer.thumbnail"
-                :alt="trailer.title"
-                class="h-full w-full object-cover"
+        <div
+            class="relative aspect-video overflow-hidden rounded-[4px] bg-black"
+        >
+            <iframe
+                :src="trailer.videoUrl"
+                :title="trailer.title"
+                class="h-full w-full"
+                frameborder="0"
+                allow="autoplay; fullscreen"
+                allowfullscreen
             />
-
-            <button
-                type="button"
-                class="absolute left-1/2 top-1/2 flex size-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white text-black"
-            >
-                ▶
-            </button>
         </div>
 
         <div class="mt-3 flex items-center justify-between">
@@ -39,7 +37,7 @@ defineProps<{
                 <div class="flex flex-col items-center gap-3">
                     <button
                         type="button"
-                        class="flex h-[58px] w-[58px] items-center justify-center rounded-[10px] bg-(--primary-darkblue) text-(--primary-white) transition-colors"
+                        class="flex h-[58px] w-[58px] items-center justify-center rounded-[10px] bg-(--primary-darkblue) text-(--primary-white)"
                     >
                         👍
                     </button>
@@ -55,7 +53,7 @@ defineProps<{
                 <div class="flex flex-col items-center gap-3">
                     <button
                         type="button"
-                        class="flex h-[58px] w-[58px] items-center justify-center rounded-[10px] bg-(--primary-darkblue) text-(--primary-white) transition-colors"
+                        class="flex h-[58px] w-[58px] items-center justify-center rounded-[10px] bg-(--primary-darkblue) text-(--primary-white)"
                     >
                         👎
                     </button>

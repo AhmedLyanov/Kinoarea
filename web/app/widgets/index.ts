@@ -7,3 +7,6 @@ export { default as Footer } from "./footer/ui/footer.vue"
 
 export { default as MovieCover } from "./movie-cover/movie-cover.vue"
 export { default as MovieMetadata } from "./movie-metadata/movie-metadata.vue"
+export { default as MovieTrailer } from "./movie-trailer/movie-trailer.vue"
+export { default as MovieFrames } from "./movie-frames/movie-frames.vue"
+export { default as MoviePlayer } from "./movie-player/movie-player.vue"    

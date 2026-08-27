@@ -5,6 +5,6 @@
 </template>
 <script setup lang="ts">
 useHead({
-    title: "VayKino",
+    title: "Kinoarea",
 });
 </script>

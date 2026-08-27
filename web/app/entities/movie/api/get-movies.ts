@@ -12,5 +12,12 @@ interface MoviesApiResponse {
 export async function getNewMovies(): Promise<Movie[]> {
     const response = await $fetch<MoviesApiResponse>("/api/movies/new");
 
+    console.log("NEW MOVIES:", response);
+
+    return response.results.map(mapMovie);
+}
+export async function getPopularMovies(): Promise<Movie[]> {
+    const response = await $fetch<MoviesApiResponse>("/api/movies/popular");
+
     return response.results.map(mapMovie);
 }

@@ -13,6 +13,8 @@ export default defineNuxtConfig({
 
     allohaApiUrl: process.env.ALLOHA_API_URL,
     allohaApiToken: process.env.ALLOHA_API_TOKEN,
+
+    kinopoiskApiToken: process.env.KINOPOISK_API_TOKEN,
   },
 
   compatibilityDate: "2025-07-15",

@@ -9,10 +9,7 @@ defineProps<{
 
 <template>
     <article class="group">
-        <NuxtLink
-            v-if="movie.ids?.kinopoisk"
-            :to="`/watch/${movie.ids.kinopoisk}`"
-        >
+        <NuxtLink :to="`/watch/${movie.ids.kinopoisk ?? movie.id}`">
             <div class="relative overflow-hidden rounded-[6px]">
                 <img
                     :src="movie.poster"
@@ -23,11 +20,15 @@ defineProps<{
                         object-cover
                         transition-transform
                         duration-300
+                        group-hover:scale-105
                     "
                 />
 
                 <span
-                    v-if="movie.rating?.imdb || movie.rating?.kinopoisk"
+                    v-if="
+                        movie.rating.imdb !== null ||
+                        movie.rating.kinopoisk !== null
+                    "
                     class="
                         absolute
                         right-2
@@ -48,14 +49,25 @@ defineProps<{
             <Typography
                 tag="h3"
                 variant="h3"
-                class="mt-2 text-[16px] font-bold leading-tight text-(--primary-white)"
+                class="
+                    mt-2
+                    text-[16px]
+                    font-bold
+                    leading-tight
+                    text-(--primary-white)
+                "
             >
                 {{ movie.title }}
             </Typography>
 
             <Typography
                 variant="small"
-                class="mt-1 text-[13px] leading-tight text-(--primary-yellow)"
+                class="
+                    mt-1
+                    text-[13px]
+                    leading-tight
+                    text-(--primary-yellow)
+                "
             >
                 {{ movie.genres.join(", ") }}
             </Typography>
