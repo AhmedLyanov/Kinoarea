@@ -1,118 +1,127 @@
 @import "tailwindcss";
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 :root {
-    --primary-bg: #1f2538;
-    --primary-white: #ffffff;
-    --primary-blue: #3657cb;
-    --primary-darkblue: #1b2133;
-    --primary-yellow: #f2f60f;
-    --primary-black: #151a26;
+  --primary-bg: #1f2538;
+  --primary-white: #ffffff;
+  --primary-blue: #3657cb;
+  --primary-darkblue: #1b2133;
+  --primary-yellow: #f2f60f;
+  --primary-black: #151a26;
 
-    --input-placeholder: #151a2699;
-    --footer-bg: #151a26;
-    --footer-bg-cover: #1d3aa0e5;
-    --rating-green: #89cb36;
-    --breadcrumbs-nonactive: #4f5b7c;
-    --footer-meta: #E3E6F0B8;
+  --input-placeholder: #151a2699;
+  --footer-bg: #151a26;
+  --footer-bg-cover: #1d3aa0e5;
+  --rating-green: #89cb36;
+  --breadcrumbs-nonactive: #4f5b7c;
+  --footer-meta: #e3e6f0b8;
 
+  --search-card-bg: #1f263b;
+  --search-card-title: #ffffff;
+  --search-card-original-title: rgba(255, 255, 255, 0.65);
+
+  --search-rating-good: #45c83a;
+  --search-rating-average: #f5a623;
+  --search-rating-bad: #e93636;
+  --search-rating-neutral: #6b7280;
+  --search-rating-text: #ffffff;
 }
 
 @font-face {
-    font-family: "Qanelas";
-    src: url("/fonts/Qanelas-Thin.otf") format("opentype");
-    font-weight: 100;
-    font-style: normal;
-    font-display: swap;
+  font-family: "Qanelas";
+  src: url("/fonts/Qanelas-Thin.otf") format("opentype");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-    font-family: "Qanelas";
-    src: url("/fonts/Qanelas-UltraLight.otf") format("opentype");
-    font-weight: 200;
-    font-style: normal;
-    font-display: swap;
+  font-family: "Qanelas";
+  src: url("/fonts/Qanelas-UltraLight.otf") format("opentype");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-    font-family: "Qanelas";
-    src: url("/fonts/Qanelas-Light.otf") format("opentype");
-    font-weight: 300;
-    font-style: normal;
-    font-display: swap;
+  font-family: "Qanelas";
+  src: url("/fonts/Qanelas-Light.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-    font-family: "Qanelas";
-    src: url("/fonts/Qanelas-Regular.otf") format("opentype");
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
+  font-family: "Qanelas";
+  src: url("/fonts/Qanelas-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-    font-family: "Qanelas";
-    src: url("/fonts/Qanelas-Medium.otf") format("opentype");
-    font-weight: 500;
-    font-style: normal;
-    font-display: swap;
+  font-family: "Qanelas";
+  src: url("/fonts/Qanelas-Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-    font-family: "Qanelas";
-    src: url("/fonts/Qanelas-SemiBold.otf") format("opentype");
-    font-weight: 600;
-    font-style: normal;
-    font-display: swap;
+  font-family: "Qanelas";
+  src: url("/fonts/Qanelas-SemiBold.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-    font-family: "Qanelas";
-    src: url("/fonts/Qanelas-Bold.otf") format("opentype");
-    font-weight: 700;
-    font-style: normal;
-    font-display: swap;
+  font-family: "Qanelas";
+  src: url("/fonts/Qanelas-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-    font-family: "Qanelas";
-    src: url("/fonts/Qanelas-ExtraBold.otf") format("opentype");
-    font-weight: 800;
-    font-style: normal;
-    font-display: swap;
+  font-family: "Qanelas";
+  src: url("/fonts/Qanelas-ExtraBold.otf") format("opentype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-    font-family: "Qanelas";
-    src: url("/fonts/Qanelas-Black.otf") format("opentype");
-    font-weight: 900;
-    font-style: normal;
-    font-display: swap;
+  font-family: "Qanelas";
+  src: url("/fonts/Qanelas-Black.otf") format("opentype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-    font-family: "Qanelas";
-    src: url("/fonts/Qanelas-Heavy.otf") format("opentype");
-    font-weight: 950;
-    font-style: normal;
-    font-display: swap;
+  font-family: "Qanelas";
+  src: url("/fonts/Qanelas-Heavy.otf") format("opentype");
+  font-weight: 950;
+  font-style: normal;
+  font-display: swap;
 }
 
 html {
-    font-family: "Qanelas", sans-serif;
+  font-family: "Qanelas", sans-serif;
 }
 
 body {
-    margin: 0;
-    background-color: var(--primary-bg);
-    color: var(--primary-white);
+  margin: 0;
+  background-color: var(--primary-bg);
+  color: var(--primary-white);
 }
 
 .container {
-    width: 100%;
-    max-width: 1430px;
-    margin-inline: auto;
+  width: 100%;
+  max-width: 1430px;
+  margin-inline: auto;
 }

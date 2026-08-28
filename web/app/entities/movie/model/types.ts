@@ -61,3 +61,15 @@ export interface MovieTranslation {
     uhd: boolean;
     lgbt: boolean;
 }
+
+export interface MovieSearchResult {
+    id: number;
+    kinopoiskId: string;
+    title: string;
+    originalTitle: string | null;
+    poster: string | null;
+    genres: string[];
+    rating: {
+        kinopoisk: number | null;
+    };
+}

@@ -1,21 +1,31 @@
 import { defineStore } from "pinia";
 
-export const useSearchStore = defineStore("search", {
-    state: () => ({
-        isOpen: false,
-    }),
+export const useSearchStore = defineStore("search", () => {
+    const isOpen = ref(false);
+    const query = ref("");
 
-    actions: {
-        open() {
-            this.isOpen = true;
-        },
+    const open = () => {
+        isOpen.value = true;
+    };
 
-        close() {
-            this.isOpen = false;
-        },
+    const close = () => {
+        isOpen.value = false;
+        query.value = "";
+    };
 
-        toggle() {
-            this.isOpen = !this.isOpen;
-        },
-    },
+    const toggle = () => {
+        if (isOpen.value) {
+            close();
+        } else {
+            open();
+        }
+    };
+
+    return {
+        isOpen,
+        query,
+        open,
+        close,
+        toggle,
+    };
 });
