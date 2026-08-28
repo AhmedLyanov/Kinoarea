@@ -4,10 +4,10 @@
     :type="type"
     :value="modelValue"
     v-bind="$attrs"
+    :class="inputClasses"
     @input="handleInput"
     @blur="$emit('blur')"
     @focus="$emit('focus')"
-    :class="inputClasses"
   >
     <slot />
   </component>

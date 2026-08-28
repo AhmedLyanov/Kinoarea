@@ -98,7 +98,7 @@ const remainingCount = computed(() =>
                         duration-300
                         group-hover:scale-105
                     "
-                />
+                >
 
                 <!-- More overlay -->
                 <div

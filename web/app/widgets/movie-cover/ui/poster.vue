@@ -11,6 +11,6 @@ defineProps<{
             :src="src"
             :alt="alt"
             class="h-[600px] w-[400px] rounded-[10px] object-cover"
-        />
+        >
     </div>
 </template>

@@ -22,7 +22,7 @@ defineProps<{
                         duration-300
                         group-hover:scale-105
                     "
-                />
+                >
 
                 <span
                     v-if="

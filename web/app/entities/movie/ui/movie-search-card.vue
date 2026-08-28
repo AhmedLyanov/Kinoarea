@@ -42,7 +42,8 @@ const openMovie = () => {
 };
 </script>
 <template>
-    <NuxtLink :to="`/watch/${movie.kinopoiskId}`" @click="openMovie" class="
+    <NuxtLink
+:to="`/watch/${movie.kinopoiskId}`" class="
         group
         flex
         h-[175px]
@@ -55,26 +56,29 @@ const openMovie = () => {
         transition-transform
         duration-200
         hover:scale-[1.005]
-    ">
-        <div class="
+    " @click="openMovie">
+        <div
+class="
                 h-[138px]
                 w-[100px]
                 shrink-0
                 overflow-hidden
                 rounded-[6px]
             ">
-            <img v-if="movie.poster" :src="movie.poster" :alt="movie.title" class="
+            <img
+v-if="movie.poster" :src="movie.poster" :alt="movie.title" class="
                     h-full
                     w-full
                     object-cover
                     transition-transform
                     duration-300
                     group-hover:scale-105
-                " />
+                " >
         </div>
 
         <div class="min-w-0 flex-1">
-            <Typography variant="h3" class="
+            <Typography
+variant="h3" class="
                     truncate
                     text-[27px]
                     font-bold
@@ -84,7 +88,8 @@ const openMovie = () => {
                 {{ movie.title }}
             </Typography>
 
-            <Typography variant="body" class="
+            <Typography
+variant="body" class="
                     mt-3
                     truncate
                     text-[19px]
@@ -95,7 +100,8 @@ const openMovie = () => {
                 {{ movie.originalTitle || "Оригинальное название не указано" }}
             </Typography>
 
-            <Typography variant="body" class="
+            <Typography
+variant="body" class="
                     mt-4
                     truncate
                     whitespace-nowrap
@@ -108,7 +114,8 @@ const openMovie = () => {
             </Typography>
         </div>
 
-        <div class="
+        <div
+class="
                 mr-9
                 flex
                 h-[42px]
@@ -119,7 +126,8 @@ const openMovie = () => {
                 rounded-[6px]
                 px-3
             " :class="ratingClass">
-            <Typography variant="body" class="
+            <Typography
+variant="body" class="
                     text-[23px]
                     font-bold
                     leading-none

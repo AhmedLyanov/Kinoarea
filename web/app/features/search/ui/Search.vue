@@ -15,7 +15,8 @@ const {
 </script>
 
 <template>
-    <div class="
+    <div
+class="
             fixed
             inset-0
             z-50
@@ -24,7 +25,8 @@ const {
             px-6
             py-8
         " @click.self="searchStore.close()">
-        <div class="
+        <div
+class="
                 mx-auto
                 flex
                 min-h-full
@@ -38,7 +40,8 @@ const {
 
             <div class="mt-[77px]">
                 <div class="flex items-center justify-center gap-5">
-                    <div class="
+                    <div
+class="
                             flex
                             h-[71px]
                             w-[815px]
@@ -48,7 +51,8 @@ const {
                             bg-(--primary-white)
                             p-2
                         ">
-                        <Input v-model="searchStore.query" placeholder="Название фильма" class="
+                        <Input
+v-model="searchStore.query" placeholder="Название фильма" class="
         h-full
         flex-1
         border-none
@@ -59,7 +63,8 @@ const {
         outline-none
     " @keyup.enter="search(searchStore.query)" />
 
-                        <Button variant="search" class="
+                        <Button
+variant="search" class="
         h-[55px]
         w-[60px]
         shrink-0
@@ -72,7 +77,8 @@ const {
                         </Button>
                     </div>
 
-                    <Button variant="ghost" class="
+                    <Button
+variant="ghost" class="
                             flex
                             size-[40px]
                             shrink-0
@@ -85,7 +91,8 @@ const {
                 </div>
 
                 <div class="mt-3">
-                    <Typography variant="h2" class="
+                    <Typography
+variant="h2" class="
                             mb-3
                             text-[28px]
                             font-semibold

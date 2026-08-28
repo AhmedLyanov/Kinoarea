@@ -12,7 +12,7 @@ withDefaults(
 <template>
     <NuxtLink to="/">
         <div class="flex gap-[6px]">
-            <img src="/icons/24/Cinema.svg" alt="Cinema" />
+            <img src="/icons/24/Cinema.svg" alt="Cinema" >
 
             <img
                 :src="
@@ -21,7 +21,7 @@ withDefaults(
                         : '/icons/24/Kinoarea.svg'
                 "
                 alt="Kinoarea"
-            />
+            >
         </div>
     </NuxtLink>
 </template>
