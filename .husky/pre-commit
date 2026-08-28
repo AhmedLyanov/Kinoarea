@@ -1,2 +1,2 @@
 cd web
-bun run lint
+bun run lint:fix
