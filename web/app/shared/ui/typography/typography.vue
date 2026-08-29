@@ -1,8 +1,5 @@
 <template>
-    <component
-        :is="tag"
-        :class="[classes, $attrs.class]"
-    >
+    <component :is="tag" :class="[classes, $attrs.class]">
         <slot />
     </component>
 </template>
@@ -30,14 +27,13 @@ const props = withDefaults(defineProps<Props>(), {
 
 const classes = computed(() => {
     const variants: Record<TypographyVariant, string> = {
-        h1: "text-[65px] font-bold leading-tight",
+h1: "text-[32px] min-[760px]:text-[40px] xl:text-[65px] font-bold leading-tight",
         h2: "text-3xl font-bold leading-tight",
         h3: "text-2xl font-semibold leading-snug",
         body: "text-base leading-relaxed",
         small: "text-sm leading-normal",
         caption: "text-xs leading-normal",
     };
-
     return variants[props.variant];
 });
 </script>

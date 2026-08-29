@@ -15,7 +15,7 @@ const emit = defineEmits<{
             v-for="category in categories"
             :key="category"
             variant="body"
-            class="font-bold text-(--primary-white) cursor-pointer"
+            class="cursor-pointer font-bold text-(--primary-white)"
             :class="
                 activeCategory === category
                     ? 'text-(--primary-white)'

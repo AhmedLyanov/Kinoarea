@@ -17,7 +17,7 @@ const closeMenu = () => {
 </script>
 
 <template>
-    <header class="container mt-3 flex justify-between">
+    <header class="container mt-3 flex justify-between px-[29px] min-[760px]:px-[54px] xl:px-0">
         <div class="hidden md:block">
             <Logo />
 
@@ -34,36 +34,25 @@ const closeMenu = () => {
         </div>
 
         <div class="hidden items-center gap-3 md:flex">
-            <Button
-                variant="search"
-                class="border-(--primary-white) bg-(--primary-white) text-(--primary-blue)"
-                @click="searchStore.open()"
-            >
+            <Button variant="search" class="border-(--primary-white) bg-(--primary-white) text-(--primary-blue)"
+                @click="searchStore.open()">
                 <Icon name="lucide:search" class="size-8" />
             </Button>
 
-            <Button
-                variant="login"
-                class="bg-(--primary-blue) text-(--primary-white) shadow-[0_0_30px_var(--primary-blue)]"
-            >
+            <Button variant="login"
+                class="bg-(--primary-blue) text-(--primary-white) shadow-[0_0_30px_var(--primary-blue)]">
                 Войти
             </Button>
         </div>
 
         <div class="flex w-full items-center justify-between md:hidden">
             <div class="flex items-center gap-2">
-                <Button
-                    variant="search"
-                    class="border-(--primary-white) bg-(--primary-white) text-(--primary-blue)"
-                    @click="searchStore.open()"
-                >
+                <Button variant="search" class="border-(--primary-white) bg-(--primary-white) text-(--primary-blue)"
+                    @click="searchStore.open()">
                     <Icon name="lucide:search" class="size-5" />
                 </Button>
 
-                <Button
-                    variant="search"
-                    @click="toggleMenu"
-                >
+                <Button variant="search" @click="toggleMenu">
                     <Icon name="lucide:menu" class="size-6" />
                 </Button>
             </div>
@@ -79,17 +68,12 @@ const closeMenu = () => {
                 </div>
             </div>
 
-            <Button
-                variant="login"
-                class="bg-(--primary-blue) text-(--primary-white) shadow-[0_0_30px_var(--primary-blue)]"
-            >
+            <Button variant="login"
+                class="bg-(--primary-blue) text-(--primary-white) shadow-[0_0_30px_var(--primary-blue)]">
                 Войти
             </Button>
         </div>
 
-        <MobileMenu
-            :is-open="isMenuOpen"
-            @close="closeMenu"
-        />
+        <MobileMenu :is-open="isMenuOpen" @close="closeMenu" />
     </header>
 </template>
