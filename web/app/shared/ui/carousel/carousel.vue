@@ -1,4 +1,5 @@
 <script setup lang="ts">
+
 import { ref } from "vue";
 
 const props = withDefaults(
@@ -39,19 +40,21 @@ const scroll = (direction: "prev" | "next") => {
 
     emit(direction);
 };
+
 </script>
 
 <template>
+
     <div
         class="relative w-full"
         :class="{
             'flex h-full flex-col': orientation === 'vertical',
         }"
     >
+
         <button
             v-if="orientation === 'vertical'"
             type="button"
-            aria-label="Предыдущие новости"
             :disabled="currentPage <= 1"
             class="
                 mx-auto
@@ -80,38 +83,43 @@ const scroll = (direction: "prev" | "next") => {
             :class="{
                 'overflow-x-auto':
                     orientation === 'horizontal',
-
                 'min-h-0 flex-1 overflow-y-auto':
                     orientation === 'vertical',
             }"
         >
+
             <div
                 :class="{
                     'min-w-0':
                         orientation === 'horizontal',
-
                     'flex flex-col gap-3':
                         orientation === 'vertical',
                 }"
             >
                 <slot />
             </div>
+
         </div>
 
         <div
             v-if="orientation === 'horizontal'"
-            class="mt-10 flex items-center gap-5"
+            class="
+                mt-[17px]
+                flex
+                items-center
+                gap-5
+                min-[760px]:mt-10
+            "
             :class="{
                 'justify-center':
                     controlsPosition === 'center',
-
                 'justify-end':
                     controlsPosition === 'right',
             }"
         >
+
             <button
                 type="button"
-                aria-label="Предыдущая"
                 :disabled="currentPage <= 1"
                 class="
                     flex
@@ -145,7 +153,6 @@ const scroll = (direction: "prev" | "next") => {
 
             <button
                 type="button"
-                aria-label="Следующая"
                 :disabled="currentPage >= totalPages"
                 class="
                     flex
@@ -165,6 +172,7 @@ const scroll = (direction: "prev" | "next") => {
                     class="size-9"
                 />
             </button>
+
         </div>
 
         <button
@@ -192,5 +200,7 @@ const scroll = (direction: "prev" | "next") => {
                 class="size-5"
             />
         </button>
+
     </div>
+
 </template>

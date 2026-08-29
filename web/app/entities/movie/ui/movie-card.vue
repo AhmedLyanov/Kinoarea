@@ -63,6 +63,7 @@ defineProps<{
             <Typography
                 variant="small"
                 class="
+                    line-clamp-2
                     mt-1
                     text-[13px]
                     leading-tight
