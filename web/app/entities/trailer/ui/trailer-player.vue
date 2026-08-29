@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { Typography } from "~/shared/ui";
+
 import type { Trailer } from "../model/types";
 
 defineProps<{
@@ -22,22 +23,24 @@ defineProps<{
             />
         </div>
 
-        <div class="mt-3 flex items-center justify-between">
+        <div class="mt-2 flex items-center justify-between min-[500px]:mt-3">
             <Typography
                 variant="body"
-                class="text-[45px] font-bold text-(--primary-white)"
+                class="text-[25px] font-bold text-(--primary-white) min-[500px]:text-[32px] xl:text-[45px]"
             >
                 {{ trailer.title }}
             </Typography>
 
             <div
                 v-if="trailer.stats"
-                class="flex items-center gap-6"
+                class="flex items-center gap-3 min-[500px]:gap-6"
             >
-                <div class="flex flex-col items-center gap-3">
+                <div
+                    class="flex flex-col items-center gap-1 min-[500px]:gap-3"
+                >
                     <button
                         type="button"
-                        class="flex h-[58px] w-[58px] items-center justify-center rounded-[10px] bg-(--primary-darkblue) text-(--primary-white)"
+                        class="flex size-9 items-center justify-center rounded-[8px] bg-(--primary-darkblue) text-(--primary-white) min-[500px]:size-[58px] min-[500px]:rounded-[10px]"
                     >
                         👍
                     </button>
@@ -50,10 +53,12 @@ defineProps<{
                     </Typography>
                 </div>
 
-                <div class="flex flex-col items-center gap-3">
+                <div
+                    class="flex flex-col items-center gap-1 min-[500px]:gap-3"
+                >
                     <button
                         type="button"
-                        class="flex h-[58px] w-[58px] items-center justify-center rounded-[10px] bg-(--primary-darkblue) text-(--primary-white)"
+                        class="flex size-9 items-center justify-center rounded-[8px] bg-(--primary-darkblue) text-(--primary-white) min-[500px]:size-[58px] min-[500px]:rounded-[10px]"
                     >
                         👎
                     </button>
