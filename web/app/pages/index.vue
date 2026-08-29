@@ -1,6 +1,22 @@
 <script setup lang="ts">
 import { Header, NowInCinema, NewTrailers, PopularFilms, LastNews, Footer } from "~/widgets";
 
+
+useSeoMeta({
+  title: 'Kinoarea — Смотреть фильмы онлайн в хорошем качестве HD 1080',
+  description: 'Онлайн-кинотеатр с огромной базой фильмов, сериалов и мультфильмов. Смотрите новинки кино, свежие трейлеры и читайте последние новости кинематографа бесплатно.',
+  
+
+  ogTitle: 'Kinoarea — Фильмы и сериалы онлайн',
+  ogDescription: 'Смотрите фильмы, новинки проката и трейлеры в Full HD качестве.',
+  ogImage: 'https://yourdomain.com', 
+  ogType: 'website',
+  
+
+  twitterCard: 'summary_large_image',
+  twitterTitle: 'Kinoarea — Смотреть фильмы онлайн',
+  twitterDescription: 'Новинки кино, трейлеры и новости кинематографа.'
+})
 </script>
 
 <template>

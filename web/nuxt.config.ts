@@ -1,6 +1,17 @@
 import tailwindcss from "@tailwindcss/vite";
 
 export default defineNuxtConfig({
+  app: {
+    head: {
+      title: "Kinoarea", // default fallback title
+      htmlAttrs: {
+        lang: "ru",
+      },
+      charset: "utf-8",
+      viewport: "width=device-width, initial-scale=1",
+      link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
+    },
+  },
   css: ["~~/globals.css"],
 
   vite: {
@@ -19,5 +30,5 @@ export default defineNuxtConfig({
 
   compatibilityDate: "2025-07-15",
   devtools: { enabled: true },
-  modules: ["@pinia/nuxt", "@nuxt/icon", "@nuxt/image", "@nuxt/eslint"],
+  modules: ["@pinia/nuxt", "@nuxt/icon", "@nuxt/image", "@nuxt/eslint", "@nuxtjs/seo"],
 });

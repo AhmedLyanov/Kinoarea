@@ -14,7 +14,9 @@
   "dependencies": {
     "@nuxt/icon": "^2.5.0",
     "@nuxt/image": "^2.1.0",
+    "@nuxtjs/seo": "^5.3.14",
     "@pinia/nuxt": "^1.0.2",
+    "@takumi-rs/core": "^2.13.1",
     "nuxt": "^4.2.2",
     "pinia": "^4.0.3",
     "vue": "^3.5.26",
@@ -25,6 +27,7 @@
     "@tailwindcss/vite": "^4.3.3",
     "@types/node": "^26.2.0",
     "eslint": "^10.9.1",
+    "nuxt-schema-org": "^6.3.1",
     "tailwindcss": "^4.3.3"
   }
 }
