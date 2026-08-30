@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { Typography } from "~/shared/ui";
+
 import type { News } from "../model/types";
 
 withDefaults(
@@ -15,38 +16,64 @@ withDefaults(
 
 <template>
     <article
-        class="relative overflow-hidden rounded-[6px]"
+        class="
+            relative
+            overflow-hidden
+            rounded-[6px]
+        "
         :class="{
-            'h-full w-full': variant === 'featured',
-            'h-[180px] w-[250px] shrink-0': variant === 'small',
+            'aspect-[3/2] w-full':
+                variant === 'featured',
+
+            'aspect-[1.4] w-full':
+                variant === 'small',
         }"
     >
         <img
             :src="news.image"
-            class="absolute inset-0 h-full w-full object-cover"
+            :alt="news.title"
+            class="
+                absolute
+                inset-0
+                h-full
+                w-full
+                object-cover
+            "
         >
 
         <div
             class="
                 absolute
                 inset-0
+                bg-black/20
             "
         />
 
         <div
-            class="relative z-10 flex h-full flex-col justify-between"
+            class="
+                relative
+                z-10
+                flex
+                h-full
+                flex-col
+                justify-between
+            "
             :class="{
-                'p-6': variant === 'featured',
-                'p-4': variant === 'small',
+                'p-5 min-[760px]:p-6':
+                    variant === 'featured',
+
+                'p-3 min-[760px]:p-4':
+                    variant === 'small',
             }"
         >
             <span
                 class="
+                    text-[14px]
+                    font-[700]
+                    leading-[191%]
                     text-(--primary-white)
                     [font-family:Qanelas]
-                    font-[700]
-                    text-[15px]
-                    leading-[191%]
+                    min-[760px]:text-[15px]
                 "
             >
                 {{ news.date }}
@@ -54,14 +81,25 @@ withDefaults(
 
             <div
                 :class="{
-                    'max-w-[850px]': variant === 'featured',
+                    'max-w-[850px]':
+                        variant === 'featured',
                 }"
             >
                 <Typography
-                    :variant="variant === 'featured' ? 'h2' : 'body'"
-                    class="font-bold text-(--primary-white)"
+                    :variant="
+                        variant === 'featured'
+                            ? 'h2'
+                            : 'body'
+                    "
+                    class="
+                        font-bold
+                        text-(--primary-white)
+                    "
                     :class="{
-                        'line-clamp-2 text-[18px] leading-[100%]':
+                        'text-[24px] leading-[110%] min-[760px]:text-[30px]':
+                            variant === 'featured',
+
+                        'line-clamp-2 text-[15px] leading-[110%] min-[760px]:text-[18px] min-[760px]:leading-[100%]':
                             variant === 'small',
                     }"
                 >
@@ -69,9 +107,20 @@ withDefaults(
                 </Typography>
 
                 <Typography
-                    v-if="news.description && variant === 'featured'"
+                    v-if="
+                        news.description &&
+                        variant === 'featured'
+                    "
                     variant="body"
-                    class="mt-4 text-white/90"
+                    class="
+                        mt-3
+                        hidden
+                        text-[16px]
+                        leading-relaxed
+                        text-white/90
+                        min-[760px]:mt-4
+                        min-[760px]:block
+                    "
                 >
                     {{ news.description }}
                 </Typography>

@@ -11,11 +11,27 @@ import { news } from "../model/data";
             relative
             z-10
             mx-auto
-            mt-16.25
+            mt-12
+            w-full
             max-w-[1430px]
+            px-[29px]
+            min-[760px]:mt-16
+            min-[760px]:px-[54px]
+            xl:mt-16.25
+            xl:px-0
         "
     >
-        <div class="flex items-center justify-between">
+        <div
+            class="
+                flex
+                flex-col
+                items-center
+                gap-2
+                min-[760px]:flex-row
+                min-[760px]:justify-between
+                min-[760px]:gap-0
+            "
+        >
             <Typography variant="h1">
                 Последние новости
             </Typography>
@@ -26,17 +42,18 @@ import { news } from "../model/data";
                     class="
                         flex
                         items-center
-                        gap-2
-                        text-[22px]
+                        gap-3
+                        text-[18px]
                         font-bold
                         text-(--primary-white)
+                        min-[760px]:text-[22px]
                     "
                 >
                     Все новости
 
                     <Icon
                         name="lucide:arrow-right"
-                        class="size-7"
+                        class="size-6 min-[760px]:size-7"
                     />
                 </Typography>
             </NuxtLink>
@@ -44,10 +61,13 @@ import { news } from "../model/data";
 
         <div
             class="
-                mt-20
+                mt-6
                 grid
-                grid-cols-[minmax(0,1fr)_250px]
+                grid-cols-1
                 gap-3
+                min-[760px]:mt-10
+                xl:mt-10
+                xl:grid-cols-[minmax(0,1fr)_250px]
             "
         >
             <NewsCard
@@ -55,12 +75,24 @@ import { news } from "../model/data";
                 variant="featured"
             />
 
-            <div class="flex flex-col gap-3">
+            <div
+                class="
+                    grid
+                    grid-cols-2
+                    gap-3
+                    xl:flex
+                    xl:flex-col
+                "
+            >
                 <NewsCard
-                    v-for="item in news.slice(1, 5)"
+                    v-for="(item, index) in news.slice(1, 5)"
                     :key="item.id"
                     :news="item"
                     variant="small"
+                    :class="{
+                        'hidden min-[760px]:block':
+                            index >= 2,
+                    }"
                 />
             </div>
         </div>
