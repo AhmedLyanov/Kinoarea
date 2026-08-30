@@ -1,1 +1,1 @@
-export { default as Search } from "./search/ui/Search.vue";
+export { default as Search } from "./search/ui/search.vue";
