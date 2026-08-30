@@ -54,12 +54,12 @@ useSchemaOrg([
 
 <template>
     <div class="mx-auto max-w-[1430px]">
-        <div class="px-[143px]">
+        <div class="px-[29px] md:px-[143px]">
             <MovieCover :movie="movie" />
 
             <MovieMetadata :movie="movie" />
-
         </div>
+
         <MovieTrailer :movie="movie" />
         <MovieFrames :movie="movie" />
         <MoviePlayer :movie="movie" />

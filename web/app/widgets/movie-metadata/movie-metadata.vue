@@ -1,14 +1,39 @@
 <template>
-    <section class="grid grid-cols-2 gap-x-[90px] gap-y-5 pt-[45px]">
+    <section
+        class="
+            pt-8
+            md:grid
+            md:grid-cols-2
+            md:gap-x-[60px]
+            md:gap-y-5
+            lg:gap-x-[90px]
+            lg:pt-[45px]
+        "
+    >
         <div
-            v-for="item in leftMetadata"
+            v-for="item in metadata"
             :key="item.label"
-            class="grid min-w-0 grid-cols-[180px_minmax(0,1fr)] items-center"
+            class="
+                grid
+                min-w-0
+                grid-cols-[110px_minmax(0,1fr)]
+                gap-3
+                py-1.5
+
+                md:grid-cols-[150px_minmax(0,1fr)]
+                md:py-0
+
+                lg:grid-cols-[180px_minmax(0,1fr)]
+            "
         >
             <Typography
                 variant="body"
                 tag="span"
-                class="whitespace-nowrap font-medium text-white"
+                class="
+                    font-medium
+                    text-white
+                    md:whitespace-nowrap
+                "
             >
                 {{ item.label }}:
             </Typography>
@@ -16,29 +41,11 @@
             <Typography
                 variant="body"
                 tag="span"
-                class="min-w-0 truncate text-(--primary-yellow)"
-            >
-                {{ item.value }}
-            </Typography>
-        </div>
-
-        <div
-            v-for="item in rightMetadata"
-            :key="item.label"
-            class="grid min-w-0 grid-cols-[180px_minmax(0,1fr)] items-center"
-        >
-            <Typography
-                variant="body"
-                tag="span"
-                class="whitespace-nowrap font-medium text-white"
-            >
-                {{ item.label }}:
-            </Typography>
-
-            <Typography
-                variant="body"
-                tag="span"
-                class="min-w-0 truncate text-(--primary-yellow)"
+                class="
+                    min-w-0
+                    line-clamp-1
+                    text-(--primary-yellow)
+                "
             >
                 {{ item.value }}
             </Typography>
@@ -54,7 +61,7 @@ const props = defineProps<{
     movie: Movie;
 }>();
 
-const leftMetadata = computed(() => [
+const metadata = computed(() => [
     {
         label: "Год",
         value: props.movie.year,
@@ -93,9 +100,6 @@ const leftMetadata = computed(() => [
             ? props.movie.producers.join(", ")
             : "Не указаны",
     },
-]);
-
-const rightMetadata = computed(() => [
     {
         label: "IMDb",
         value:

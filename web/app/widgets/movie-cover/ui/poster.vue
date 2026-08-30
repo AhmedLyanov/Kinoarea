@@ -7,10 +7,21 @@ defineProps<{
 
 <template>
     <div class="shrink-0">
-        <img
+        <NuxtImg
             :src="src"
             :alt="alt"
-            class="h-[600px] w-[400px] rounded-[10px] object-cover"
-        >
+            class="
+                h-[310px]
+                w-[230px]
+                rounded-[10px]
+                object-cover
+
+                md:h-[387px]
+                md:w-[291px]
+
+                lg:h-[600px]
+                lg:w-[400px]
+            "
+        />
     </div>
 </template>
