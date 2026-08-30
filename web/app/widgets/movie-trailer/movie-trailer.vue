@@ -26,20 +26,62 @@ const trailer = computed<Trailer | null>(() => {
 <template>
     <section
         v-if="trailer"
-        class="relative z-10 mx-auto mt-10 max-w-[1430px]"
+        class="
+            relative
+            z-10
+            mx-auto
+            mt-10
+            max-w-[1430px]
+        "
     >
-        <div class="mb-7 flex items-center justify-between">
+        <div
+            class="
+                mb-7
+                flex
+                flex-col
+                items-center
+                gap-3
+
+                md:flex-row
+                md:items-center
+                md:justify-between
+                md:gap-0
+            "
+        >
             <Typography variant="h1">
                 Трейлер фильма
             </Typography>
 
-            <NuxtLink to="/trailers">
+            <NuxtLink
+                to="/trailers"
+                class="
+                    flex
+                    items-center
+                    gap-4
+                "
+            >
                 <Typography
                     variant="body"
-                    class="text-[22px] font-bold text-(--primary-white)"
+                    class="
+                        text-[18px]
+                        font-bold
+                        text-(--primary-white)
+
+                        md:text-[22px]
+                    "
                 >
                     Все трейлеры
                 </Typography>
+
+                <span
+                    class="
+                        text-[28px]
+                        leading-none
+                        text-(--primary-white)
+                    "
+                >
+                    →
+                </span>
             </NuxtLink>
         </div>
 
