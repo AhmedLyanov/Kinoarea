@@ -12,7 +12,6 @@ defineProps<{
 
 <template>
     <section class="w-full">
-        <!-- Desktop / Tablet -->
         <div
             class="
                 hidden
@@ -40,7 +39,6 @@ defineProps<{
             </div>
         </div>
 
-        <!-- Mobile -->
         <div class="md:hidden">
             <MobileMovieDetails :movie="movie" />
         </div>

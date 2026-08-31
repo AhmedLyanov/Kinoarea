@@ -4,6 +4,7 @@ import {
     Typography,
     Button,
     MovieRating,
+    ExpandableText,
 } from "~/shared/ui";
 
 import type { Movie } from "~/entities/movie";
@@ -18,10 +19,7 @@ defineProps<{
     <div class="w-full">
         <Breadcrumbs :title="movie.title" />
         <div class="mt-5">
-            <Typography
-                variant="h1"
-                class="text-[24px] leading-[125%]"
-            >
+            <Typography variant="h1" class="text-[24px] leading-[125%]">
                 {{ movie.title }}
             </Typography>
 
@@ -34,10 +32,7 @@ defineProps<{
             </Typography>
         </div>
         <div class="mt-6 flex items-start gap-5">
-            <Poster
-                :src="movie.poster"
-                :alt="movie.title"
-            />
+            <Poster :src="movie.poster" :alt="movie.title" />
 
             <div class="flex flex-col gap-4">
                 <MovieRating
@@ -54,12 +49,16 @@ defineProps<{
             </div>
         </div>
         <div class="mt-6 w-full">
-            <Typography
-                variant="body"
-                class="line-clamp-3 text-[16px] leading-[160%] text-white"
-            >
-                {{ movie.description }}
-            </Typography>
+            <div class="mt-6 w-full">
+                <ExpandableText :lines="3">
+                    <Typography
+                        variant="body"
+                        class="text-[16px] leading-[160%] text-white"
+                    >
+                        {{ movie.description }}
+                    </Typography>
+                </ExpandableText>
+            </div>
         </div>
         <div class="mt-6 grid justify-center justify-items-center gap-4">
             <Button
@@ -67,44 +66,23 @@ defineProps<{
                 variant="outline"
                 class="h-[48px] shrink-0 px-4"
             >
-                <Icon
-                    name="lucide:play"
-                    class="size-5"
-                />
+                <Icon name="lucide:play" class="size-5" />
 
-                <Typography
-                    variant="body"
-                    class="pl-2 text-[14px]"
-                >
+                <Typography variant="body" class="pl-2 text-[14px]">
                     Смотреть трейлер
                 </Typography>
             </Button>
 
             <div class="flex items-center gap-3">
-                <Icon
-                    name="simple-icons:vk"
-                    class="size-4 text-white"
-                />
+                <Icon name="simple-icons:vk" class="size-4 text-white" />
 
-                <Icon
-                    name="lucide:instagram"
-                    class="size-4 text-white"
-                />
+                <Icon name="lucide:instagram" class="size-4 text-white" />
 
-                <Icon
-                    name="lucide:facebook"
-                    class="size-4 text-white"
-                />
+                <Icon name="lucide:facebook" class="size-4 text-white" />
 
-                <Icon
-                    name="simple-icons:twitter"
-                    class="size-4 text-white"
-                />
+                <Icon name="simple-icons:twitter" class="size-4 text-white" />
 
-                <Icon
-                    name="lucide:more-horizontal"
-                    class="size-4 text-white"
-                />
+                <Icon name="lucide:more-horizontal" class="size-4 text-white" />
             </div>
         </div>
     </div>

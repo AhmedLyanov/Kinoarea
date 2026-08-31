@@ -1,60 +1,35 @@
 <template>
     <section
-        class="
-            pt-8
-            md:grid
-            md:grid-cols-2
-            md:gap-x-[60px]
-            md:gap-y-5
-            lg:gap-x-[90px]
-            lg:pt-[45px]
-        "
+        class="pt-8 md:grid md:grid-cols-2 md:gap-x-[60px] md:gap-y-5 lg:gap-x-[90px] lg:pt-[45px]"
     >
         <div
             v-for="item in metadata"
             :key="item.label"
-            class="
-                grid
-                min-w-0
-                grid-cols-[110px_minmax(0,1fr)]
-                gap-3
-                py-1.5
-
-                md:grid-cols-[150px_minmax(0,1fr)]
-                md:py-0
-
-                lg:grid-cols-[180px_minmax(0,1fr)]
-            "
+            class="grid min-w-0 grid-cols-[fit-content(180px)_minmax(0,1fr)] gap-3 py-1.5 md:py-0"
         >
             <Typography
                 variant="body"
                 tag="span"
-                class="
-                    font-medium
-                    text-white
-                    md:whitespace-nowrap
-                "
+                class="whitespace-nowrap font-medium text-white"
             >
                 {{ item.label }}:
             </Typography>
 
-            <Typography
-                variant="body"
-                tag="span"
-                class="
-                    min-w-0
-                    line-clamp-1
-                    text-(--primary-yellow)
-                "
-            >
-                {{ item.value }}
-            </Typography>
+            <ExpandableText :lines="1">
+                <Typography
+                    variant="body"
+                    tag="span"
+                    class="min-w-0 text-(--primary-yellow)"
+                >
+                    {{ item.value }}
+                </Typography>
+            </ExpandableText>
         </div>
     </section>
 </template>
 
 <script setup lang="ts">
-import { Typography } from "@/shared/ui";
+import { Typography, ExpandableText } from "@/shared/ui";
 import type { Movie } from "~/entities/movie";
 
 const props = defineProps<{
@@ -80,9 +55,7 @@ const metadata = computed(() => [
     },
     {
         label: "Возраст",
-        value: props.movie.age
-            ? `${props.movie.age}+`
-            : "Не указан",
+        value: props.movie.age ? `${props.movie.age}+` : "Не указан",
     },
     {
         label: "Качество",

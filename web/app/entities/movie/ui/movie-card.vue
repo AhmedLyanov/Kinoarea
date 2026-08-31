@@ -5,6 +5,17 @@ import type { Movie } from "../model/types";
 defineProps<{
     movie: Movie;
 }>();
+
+const getRatingStyle = (rating: number | null) => {
+    if (rating === null) return { backgroundColor: "var(--rating-green)" };
+    
+    const percentage = Math.min(Math.max(rating / 10, 0), 1);
+    const hue = percentage * 120;
+    
+    return {
+        backgroundColor: `hsl(${hue}, 70%, 50%)`
+    };
+};
 </script>
 
 <template>
@@ -34,13 +45,13 @@ defineProps<{
                         right-2
                         top-2
                         rounded-[6px]
-                        bg-(--rating-green)
                         px-3
                         py-1.5
                         text-[14px]
                         font-bold
                         text-white
                     "
+                    :style="getRatingStyle(movie.rating.imdb ?? movie.rating.kinopoisk)"
                 >
                     {{ movie.rating.imdb ?? movie.rating.kinopoisk }}
                 </span>

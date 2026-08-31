@@ -6,3 +6,4 @@ export { default as Carousel } from "./carousel/carousel.vue";
 export { default as Input } from "./input/input.vue";
 export { default as Breadcrumbs } from "./breadcrumbs/breadcrumbs.vue";
 export { default as MovieRating } from "./rating-circle/rating-circle.vue";
+export { default as ExpandableText } from "./expandable-text/expandable-text.vue";

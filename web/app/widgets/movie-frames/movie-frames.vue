@@ -66,12 +66,15 @@ const remainingCount = computed(() =>
                     Кадры из фильма
                 </Typography>
 
+                <!-- Mobile -->
                 <NuxtLink
                     to="/frames"
                     class="
                         flex
                         items-center
                         gap-4
+
+                        md:hidden
                     "
                 >
                     <Typography
@@ -82,8 +85,6 @@ const remainingCount = computed(() =>
                             font-bold
                             leading-none
                             text-(--primary-white)
-
-                            md:text-left
                         "
                     >
                         Все кадры
@@ -101,6 +102,7 @@ const remainingCount = computed(() =>
                 </NuxtLink>
             </div>
 
+            <!-- Desktop -->
             <NuxtLink
                 to="/frames"
                 class="

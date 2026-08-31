@@ -4,6 +4,7 @@ import {
     Typography,
     Button,
     MovieRating,
+    ExpandableText,
 } from "~/shared/ui";
 
 import type { Movie } from "~/entities/movie";
@@ -27,13 +28,7 @@ defineProps<{
             <Typography
                 v-if="movie.originalTitle"
                 variant="body"
-                class="
-                    mt-1
-                    break-words
-                    text-[20px]
-                    leading-[140%]
-                    lg:text-[25px]
-                "
+                class="mt-1 break-words text-[20px] leading-[140%] lg:text-[25px]"
             >
                 {{ movie.originalTitle }}
             </Typography>
@@ -51,89 +46,41 @@ defineProps<{
                 />
             </div>
             <div
-                class="
-                    mt-6
-                    w-full
-                    max-w-[520px]
-                    text-white
-                    lg:mt-7.5
-                    lg:max-w-[650px]
-                "
+                class="mt-6 w-full max-w-[520px] text-white lg:mt-7.5 lg:max-w-[650px]"
             >
-                <Typography
-                    variant="body"
-                    class="
-                        line-clamp-3
-                        text-[18px]
-                        leading-[160%]
-                        lg:text-[20px]
-                        lg:leading-[167%]
-                    "
-                >
-                    {{ movie.description }}
-                </Typography>
+                <ExpandableText :lines="3">
+                    <Typography
+                        variant="body"
+                        class="text-[18px] leading-[160%] lg:text-[20px] lg:leading-[167%]"
+                    >
+                        {{ movie.description }}
+                    </Typography>
+                </ExpandableText>
             </div>
             <div
-                class="
-                    mt-6
-                    flex
-                    flex-wrap
-                    items-center
-                    gap-6
-                    lg:mt-7.5
-                    lg:gap-9.25
-                "
+                class="mt-6 flex flex-wrap items-center gap-6 lg:mt-7.5 lg:gap-9.25"
             >
                 <Button
                     v-if="movie.trailerUrl"
                     variant="outline"
-                    class="
-                        h-[60px]
-                        shrink-0
-                        px-5
-                        lg:h-[71px]
-                    "
+                    class="h-[60px] shrink-0 px-5 lg:h-[71px]"
                 >
-                    <Icon
-                        name="lucide:play"
-                        class="size-7 lg:size-9"
-                    />
+                    <Icon name="lucide:play" class="size-7 lg:size-9" />
 
                     <Typography
                         variant="body"
-                        class="
-                            pl-2
-                            text-[16px]
-                            lg:pl-3
-                            lg:text-[18px]
-                        "
+                        class="pl-2 text-[16px] lg:pl-3 lg:text-[18px]"
                     >
                         Смотреть трейлер
                     </Typography>
                 </Button>
 
-                <div
-                    class="
-                        flex
-                        items-center
-                        gap-4
-                        lg:gap-6
-                    "
-                >
-                    <Icon
-                        name="simple-icons:vk"
-                        class="size-5 text-white"
-                    />
+                <div class="flex items-center gap-4 lg:gap-6">
+                    <Icon name="simple-icons:vk" class="size-5 text-white" />
 
-                    <Icon
-                        name="lucide:instagram"
-                        class="size-5 text-white"
-                    />
+                    <Icon name="lucide:instagram" class="size-5 text-white" />
 
-                    <Icon
-                        name="lucide:facebook"
-                        class="size-5 text-white"
-                    />
+                    <Icon name="lucide:facebook" class="size-5 text-white" />
 
                     <Icon
                         name="simple-icons:twitter"
