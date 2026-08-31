@@ -1,16 +1,29 @@
 <script setup lang="ts">
 import { computed, ref } from "vue";
+
 import { getNewMovies } from "~/entities/movie/api/get-movies";
 import MovieCard from "~/entities/movie/ui/movie-card.vue";
+
 import { Button, Typography } from "~/shared/ui";
+
 import MovieCategories from "./movie-categories.vue";
-import { movieCategories } from "../model/data";
+import { categoryGenres, movieCategories } from "../model/data";
 
 const activeCategory = ref("Все");
 
 const movies = await getNewMovies();
 
-const visibleMovies = computed(() => movies.slice(0, 8));
+const visibleMovies = computed(() => {
+    const genre = categoryGenres[activeCategory.value];
+
+    if (!genre) {
+        return movies.slice(0, 8);
+    }
+
+    return movies
+        .filter((movie) => movie.genres?.includes(genre))
+        .slice(0, 8);
+});
 </script>
 
 <template>
