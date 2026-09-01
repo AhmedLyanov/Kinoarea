@@ -30,5 +30,12 @@ export default defineNuxtConfig({
 
   compatibilityDate: "2025-07-15",
   devtools: { enabled: true },
-  modules: ["@pinia/nuxt", "@nuxt/icon", "@nuxt/image", "@nuxt/eslint", "@nuxtjs/seo"],
+  modules: [
+    "@pinia/nuxt",
+    "@nuxt/icon",
+    "@nuxt/image",
+    "@nuxt/ui",
+    "@nuxt/eslint",
+    "@nuxtjs/seo",
+  ],
 });

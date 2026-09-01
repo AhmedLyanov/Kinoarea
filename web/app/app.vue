@@ -1,7 +1,9 @@
 <template>
-    <NuxtLayout>
-        <NuxtPage />
-    </NuxtLayout>
+    <UApp>
+        <NuxtLayout>
+            <NuxtPage />
+        </NuxtLayout>
+    </UApp>
 
     <Search v-if="searchStore.isOpen" />
 </template>
@@ -36,7 +38,7 @@ onMounted(() => {
                 win.ym!.a = win.ym!.a || [];
                 win.ym!.a.push(args);
             },
-            { a: [] }
+            { a: [] },
         );
 
     const script = document.createElement("script");
@@ -54,18 +56,10 @@ onMounted(() => {
         webvisor: true,
     });
 
-    win.ym(
-        METRIKA_ID,
-        "hit",
-        window.location.href
-    );
+    win.ym(METRIKA_ID, "hit", window.location.href);
 
     router.afterEach((to) => {
-        win.ym?.(
-            METRIKA_ID,
-            "hit",
-            window.location.origin + to.fullPath
-        );
+        win.ym?.(METRIKA_ID, "hit", window.location.origin + to.fullPath);
     });
 });
 </script>

@@ -6,8 +6,8 @@ export default defineEventHandler(async () => {
         query: {
 
             token: config.bhceshToken,
-            sort: "-old",
-            type: "films",
+            sort: "-views",
+            type: "anime",
             limit: 50,
             year: 2026,
         },

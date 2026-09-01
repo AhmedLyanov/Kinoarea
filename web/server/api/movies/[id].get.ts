@@ -21,5 +21,16 @@ export default defineEventHandler(async (event) => {
 
     const data: AllohaMovieResponse = JSON.parse(response);
 
+    if (!data.data) {
+        throw createError({
+            statusCode: 404,
+            statusMessage: "Movie details not found",
+            data: {
+                code: "MOVIE_NOT_AVAILABLE",
+                message: "Информация о фильме пока недоступна",
+            },
+        });
+    }
+
     return mapAllohaMovie(data);
 });
