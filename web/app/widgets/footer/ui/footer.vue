@@ -15,7 +15,6 @@ import {
             z-10
             mt-16.25
             w-full
-            bg-(--footer-bg)
             px-[29px]
             py-7.5
 
@@ -32,7 +31,6 @@ import {
                 max-w-357.5
             "
         >
-            <!-- Newsletter -->
             <div
                 class="
                     relative

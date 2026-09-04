@@ -6,14 +6,14 @@ import {
     ref,
 } from "vue";
 
-import { getPopularMovies } from "~/entities/movie/api/get-movies";
+import { getNewMovies } from "~/entities/movie/api/get-movies";
 import MovieCard from "~/entities/movie/ui/movie-card.vue";
 import { Carousel, Typography } from "~/shared/ui";
 
 const currentPage = ref(1);
 const screenWidth = ref(0);
 
-const movies = await getPopularMovies();
+const movies = await getNewMovies();
 
 const moviesPerPage = computed(() => {
     if (screenWidth.value >= 1280) {
@@ -105,71 +105,26 @@ onUnmounted(() => {
 <template>
     <section
         class="
-            relative
-            z-10
-            mx-auto
-            mt-12
-            w-full
-            max-w-[1430px]
-            px-[29px]
-            min-[760px]:mt-16
-            min-[760px]:px-[54px]
-            xl:mt-18.75
-            xl:px-0
+            px-[245px]
+            py-[49px]
         "
     >
-        <div
-            class="
-                mb-6
-                flex
-                items-center
-                justify-center
-                gap-2
-                min-[760px]:mb-8
-                min-[760px]:justify-start
-                min-[760px]:gap-0
-                xl:mb-6
-                xl:gap-14
-            "
-        >
-            <Typography variant="h1">
-                Популярные фильмы
-            </Typography>
-
-            <div
-                class="
-                    hidden
-                    h-[2px]
-                    w-10
-                    shrink-0
-                    bg-(--primary-white)
-                    xl:block
-                "
-            />
-
-            <button
-                type="button"
-                class="
-                    flex
-                    shrink-0
-                    items-center
-                    min-[760px]:hidden
-                "
-            >
-                <Icon
-                    name="lucide:menu"
-                    class="size-6 text-(--primary-white)"
-                />
-            </button>
-        </div>
-
         <Carousel
             :current-page="currentPage"
             :total-pages="totalPages"
-            controls-position="center"
+            controls-position="right"
+            controls-placement="top"
             @prev="prevPage"
             @next="nextPage"
         >
+            <template #header>
+                <Typography
+                    variant="h1"
+                >
+                    Ожидаемые новинки
+                </Typography>
+            </template>
+
             <div
                 v-for="(page, index) in pages"
                 :key="index"
@@ -182,16 +137,13 @@ onUnmounted(() => {
             >
                 <div
                     class="
-                        mt-0
                         grid
                         grid-cols-2
                         gap-x-3.5
                         gap-y-7
-                        min-[760px]:mt-4
                         min-[760px]:grid-cols-3
                         min-[760px]:gap-x-5
                         min-[760px]:gap-y-8
-                        xl:mt-15.75
                         xl:grid-cols-4
                         xl:gap-5.5
                     "

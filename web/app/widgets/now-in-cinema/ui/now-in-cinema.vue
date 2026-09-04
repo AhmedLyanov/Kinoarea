@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, ref } from "vue";
 
-import { getNewMovies } from "~/entities/movie/api/get-movies";
+import { getPopularMovies } from "~/entities/movie/api/get-movies";
 import MovieCard from "~/entities/movie/ui/movie-card.vue";
 
 import { Button, Typography } from "~/shared/ui";
@@ -11,7 +11,7 @@ import { categoryGenres, movieCategories } from "../model/data";
 
 const activeCategory = ref("Все");
 
-const movies = await getNewMovies();
+const movies = await getPopularMovies();
 
 const visibleMovies = computed(() => {
     const genre = categoryGenres[activeCategory.value];
